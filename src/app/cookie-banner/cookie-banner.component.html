@@ -1,9 +1,27 @@
-<div class="modal-header">
-    <h4 class="modal-title">Hi there!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-<div class="modal-body">
-    <p>Hello</p>
+<div class="upper">
+    <div class="header">
+        <h3 class="title">Can we store cookies?</h3>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="body" ngbAutoFocus>
+        <p>We and our partners use technologies, such as cookies, and process personal data, such as IP addresses and cookie identifiers, to personalize ads and content based on your interests, measure the performance of ads and content, and derive insights about the audiences who saw ads and content.</p>
+        <p>Click below to consent to the use of this technology and the processing of your personal data for these purposes. You can chage your mind and change your consent choices at any time by returning to this site.</p>
+        <p>You can familiarize with our <a class="privacy" href="#">Privacy Policy</a></p>
+    </div>
+    <div class="footer row">
+        <div class="col d-flex">
+            <button class="btn btn-success mr-2">Accept All</button>
+            <button class="btn btn-outline-light text-muted mr-auto">Save Settings</button>
+            <div ngbDropdown placement="top-right" class="d-inline-block">
+                <button class="btn text-muted" id="dropdownBasic2" ngbDropdownToggle>Customize</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                    <button ngbDropdownItem>Action 1</button>
+                    <button ngbDropdownItem>Action 2</button>
+                    <button ngbDropdownItem>Action 3</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
