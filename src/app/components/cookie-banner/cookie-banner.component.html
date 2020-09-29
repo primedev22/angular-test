@@ -5,7 +5,7 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="body" ngbAutoFocus>
+    <div class="body">
         <p>We and our partners use technologies, such as cookies, and process personal data, such as IP addresses and cookie identifiers, to personalize ads and content based on your interests, measure the performance of ads and content, and derive insights about the audiences who saw ads and content.</p>
         <p>Click below to consent to the use of this technology and the processing of your personal data for these purposes. You can chage your mind and change your consent choices at any time by returning to this site.</p>
         <p>You can familiarize with our <a class="privacy" href="#">Privacy Policy</a></p>
@@ -26,5 +26,12 @@
     </div>
 </div>
 <div class="lower">
-    <app-accordion-item></app-accordion-item>
+    <app-accordion-item
+        *ngFor="let accordian of accordians"
+        [isMandatory]="accordian['IsMandatory']"
+        [categoryHeading]="accordian['CategoyHeading']"
+        [categoryText]="accordian['CategoyText']"
+        [pluginList]="accordian['PluginList']"
+    >
+    </app-accordion-item>
 </div>

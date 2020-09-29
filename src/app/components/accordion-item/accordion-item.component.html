@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header" [ngClass]="{'collapsed': !opened}">
         <div class="d-flex align-items-center justify-content-between">
-            <app-toggle [selected]="true" label="Advertising"></app-toggle>
+            <app-toggle [selected]="isMandatory" [label]="categoryHeading"></app-toggle>
             <button class="btn p-0" (click)="opened = !opened">
                 <svg *ngIf="opened" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
@@ -13,10 +13,7 @@
         </div>
     </div>
     <div *ngIf="opened" class="card-body">
-        <p>
-            We use social media tools on our website to enable sharing from our website.
-            These plugins may share content you provide to 3rd party. We recommend you read their privacy policies.
-        </p>
+        <p>{{ categoryText }}</p>
         <table>
             <thead>
                 <tr>
@@ -26,15 +23,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Google Analytics</td>
-                    <td><app-toggle [selected]="true"></app-toggle></td>
-                    <td><a href="#">Go to site</a></td>
-                </tr>
-                <tr>
-                    <td>Hotjar</td>
-                    <td><app-toggle></app-toggle></td>
-                    <td><a href="#">Go to site</a></td>
+                <tr *ngFor="let plugin of pluginList">
+                    <td>{{ plugin['ComplianceType'] }}</td>
+                    <td><app-toggle [selected]="plugin['BlockingEnabled']"></app-toggle></td>
+                    <td><a href="{{ plugin['optOutExternalLink'] }}">Go to site</a></td>
                 </tr>
             </tbody>
         </table>

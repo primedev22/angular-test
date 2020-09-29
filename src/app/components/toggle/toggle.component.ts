@@ -7,13 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToggleComponent implements OnInit {
   @Input()
-  label: string;
-  
+  label?: string;
   @Input()
   selected: boolean = false;
-  constructor() { }
 
+  constructor() { }
   ngOnInit(): void {
   }
-
 }

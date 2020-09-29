@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 @Component({
   selector: 'app-root',
