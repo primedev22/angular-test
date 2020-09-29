@@ -1,5 +1,6 @@
 .upper {
     position: relative;
+    box-shadow: 0 4px 10px 0 rgba(0 , 0, 0, 0.1);
 }
 .header {
     padding: 1.5rem;
@@ -14,6 +15,9 @@
     top: 5px;
     font-weight: 200;
 }
+.close:focus {
+    outline: none;
+}
 .body {
     padding: 0rem 1.5rem;
 }
@@ -24,6 +28,7 @@ p {
 .privacy {
     color: black;
     font-weight: bold;
+    text-decoration: underline;
 }
 .footer {
     padding: 1.5rem;
@@ -32,6 +37,13 @@ p {
     font-size: 14px;
     width: 120px;
 }
+.btn:focus {
+    box-shadow: none;
+}
 .btn-outline-light {
     border-color: lightgrey!important;
+}
+.lower {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 1.5rem;
 }
